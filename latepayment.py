@@ -95,7 +95,7 @@ def get_period_w_invest(pv, rate, init_fund, ret, payment):
 def separate_payment(init_fund, ret, payment, period):
     g = (1 + ret)**(20/260) - 1
     if g == 0:
-        return period, interest
+        return period, payment
     
     # 从购房基金中每月最大支出金额payment_fund
     payment_fund = init_fund * g / (1 - (1 / (1 + g))**period)
